@@ -22,7 +22,6 @@ pub fn long_division(dividend: i64, divisor: i64) -> (i64, i64) {
     println!("DIGITS: {:?}", digits);
 
     let mut quotient = 0;
-    let mut remainder = 0;
     let mut num = 0;
 
     for i in 0..digits.len() {
@@ -41,7 +40,7 @@ pub fn long_division(dividend: i64, divisor: i64) -> (i64, i64) {
         }
     }
 
-    remainder = num as i64;
+    let remainder = num as i64;
 
     let sign = (dividend < 0) ^ (divisor < 0);
     let quotient_signed = (quotient as i64) * if sign { -1 } else { 1 };
